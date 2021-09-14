@@ -79,7 +79,7 @@
 			<br>
 			<div class="buttons">
 				<input type="button" name="button1" id = "button1" value="Submit" onclick="myFun()">
-				<input type="reset" id="button2">
+				<input type="reset" id="button2" onclick="resetButton()">
 			</div>
 		</div>
 	</form>
@@ -109,6 +109,9 @@
 		else {
 			document.getElementById("Answer").innerHTML="Please enter value!";
 		}
+	}
+	function resetButton() {
+		document.getElementById("Answer").innerHTML="";
 	}
 </script>
 </html>
