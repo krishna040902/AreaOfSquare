@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome!</title>
+	<style type="text/css">
+		div{
+			border-style: solid;
+			border-width: 1px;
+			border-radius: 10px; 
+			padding:10px;
+			max-width: 700px;
+			display: inline-block;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		#Answer{
+			text-align: center;
+			font-size: 135%;
+		}
+		#labelid{
+			font-size: 135%;
+		}
+		#button1, #button2{
+			padding: 15px,32px,15px,32px;
+			font-size: 110%;
+			border-color:#4CAF50;
+			background-color: #4CAF50;
+			border-radius: 12px;
+			text-decoration: none;
+			color: white;
+			
+		}
+		.radiobuttons{
+			margin-top: 10px;
+		}
+		.buttons{
+			border:none;
+			/*display: inline-block;*/
+		}
+		.top{
+			border: solid 1px black;
+			border-radius: 40px;
+			padding: 10px;
+			background-color: #d8e6db;
+		}
+		#logo{
+			width: 40px;
+			float: left;
+			padding-top: 5px;
+
+		}
+		#heading{
+			
+		}
+		h4{
+			float: right;
+			padding: 0px;
+		}
+	</style>
+</head>
+<body>
+	<header class="top">
+		<img id="logo" src="logo.png" alt="Sorry!">
+		<h3 id="heading"><i>Welcome to my website!</i></h3>
+	</header>
+	<h1 style="text-align: center;"><u>Area of Square</u></h1>
+	<form>
+		<div >
+			<label for="text1" id="labelid">Enter length of side:</label>
+			<input type="number" id="text1" style="font-size: 115%;">
+			<br>
+			<div class="radiobuttons">
+				<label for="unit1" style="font-size: 125%">m</label>
+				<input type="radio" name="unit" id="unit1" value="m">
+				<label for="unit2" style="font-size: 125%">cm</label>
+				<input type="radio" name="unit" id="unit2" value="cm">
+			</div>
+			<br>
+			<div class="buttons">
+				<input type="button" name="button1" id = "button1" value="Submit" onclick="myFun()">
+				<input type="reset" id="button2">
+			</div>
+		</div>
+	</form>
+	<p id="Answer"></p>
+	
+</body>
+<script>
+	function myFun() {
+		var x = document.getElementById('text1').value;
+		var rd1 = document.getElementById('unit1');
+		var rd2 = document.getElementById('unit2');
+		var side = parseFloat(x)
+		if (x.length != 0) {
+			var area = x**2
+			if (rd1.checked ==true) {
+				var ansunit = rd1.value+"²";
+				document.getElementById("Answer").innerHTML="Area = "+area+ansunit;
+		}
+			else if (rd2.checked == true) {
+				var ansunit = rd2.value+"²";
+				document.getElementById("Answer").innerHTML="Area = "+area+ansunit;
+		}
+			else {
+				document.getElementById("Answer").innerHTML="You have not selected any unit!";
+			}
+		}
+		else {
+			document.getElementById("Answer").innerHTML="Please enter value!";
+		}
+	}
+</script>
+</html>
